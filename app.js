@@ -70,10 +70,17 @@ function createRandomCircle () {
     circle.style.height = `${size}px`
     circle.style.top = `${y}px`
     circle.style.left = `${x}px`
+    circle.style.color = getRandomColor(colors)
 
     board.append(circle)
 }
 
 function getRandomNumber(min,max) {
     return Math.round(Math.random() * (max - min) + min)
+}
+
+function getRandomColor(colors) {
+    const index = Math.floor(Math.random() * colors.length);
+
+    return colors[index];
 }
